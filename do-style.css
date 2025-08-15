@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  color: white;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 20px 30px;
+  background: linear-gradient(to right, #ff1f1f, #000);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px #ff0000;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #eeeeee;
+}
+
+.btn-back {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff3c3c;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn-back:hover {
+  background: #ff0000;
+}
+
+.course-detail {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 60, 60, 0.3);
+  backdrop-filter: blur(5px);
+  animation: glow 3s infinite alternate;
+}
+
+.course-detail h2 {
+  color: #ff3c3c;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.course-detail ul {
+  list-style-type: "💥 ";
+  font-size: 1.2rem;
+  padding-left: 20px;
+  color: #ccc;
+}
+
+.btn-start {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 30px;
+  background: #ff3c3c;
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn-start:hover {
+  background: #ff0000;
+  box-shadow: 0 0 20px red;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+  }
+}

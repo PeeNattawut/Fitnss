@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to the Gym</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(-45deg, #1a0000, #330000, #660000, #1a1a1a);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      text-align: center;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 3rem;
+      background: linear-gradient(90deg, #ff0000, #ff6600, #ffcc00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(255,0,0,0.6);
+      transition: transform 0.3s ease;
+    }
+
+    h1:hover {
+      transform: scale(1.05);
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #ccc;
+      margin: 20px 0;
+      letter-spacing: 1px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      color: white;
+      background: linear-gradient(45deg, #ff0000, #ff6600, #ffaa00);
+      background-size: 200% 200%;
+      animation: btnGlow 4s ease infinite;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #ff3300;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    @keyframes btnGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* เอฟเฟกต์ประกายไฟ */
+    .spark {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: radial-gradient(circle, yellow, red);
+      border-radius: 50%;
+      animation: floatUp 3s linear forwards;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-150px) scale(0.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="title"></h1>
+    <p id="subtitle"></p>
+    <a href="dorm.html" class="btn" id="startBtn">เริ่มต้นฝึกซ้อม</a>
+  </div>
+
+  <script>
+    // Typewriter Effect
+    function typeWriter(text, element, delay = 100, callback) {
+      let i = 0;
+      function typing() {
+        if (i < text.length) {
+          element.textContent += text.charAt(i);
+          i++;
+          setTimeout(typing, delay);
+        } else if (callback) {
+          callback();
+        }
+      }
+      typing();
+    }
+
+    const titleText = "ยินดีต้อนรับสู่ยิมของเรา";
+    const subtitleText = "แข็งแกร่งขึ้นในทุกๆ วัน";
+
+    const titleEl = document.getElementById("title");
+    const subtitleEl = document.getElementById("subtitle");
+
+    typeWriter(titleText, titleEl, 80, () => {
+      typeWriter(subtitleText, subtitleEl, 60);
+    });
+
+    // ปุ่มสั่นเมื่อเอาเมาส์ชี้
+    const btn = document.getElementById("startBtn");
+    btn.addEventListener("mouseenter", () => {
+      btn.style.transform = "scale(1.1) rotate(1deg)";
+      setTimeout(() => btn.style.transform = "", 150);
+    });
+
+    // เอฟเฟกต์ประกายไฟแบบสุ่ม
+    function createSpark() {
+      const spark = document.createElement("div");
+      spark.classList.add("spark");
+      spark.style.left = Math.random() * window.innerWidth + "px";
+      spark.style.top = window.innerHeight + "px";
+      document.body.appendChild(spark);
+
+      setTimeout(() => {
+        spark.remove();
+      }, 3000);
+    }
+    setInterval(createSpark, 100);
+
+    // เปลี่ยนสีหัวข้อทุก 3 วินาที
+    const colors = [
+      "linear-gradient(90deg, #ff0000, #ff6600, #ffcc00)",
+      "linear-gradient(90deg, #ff00ff, #ff3399, #ff6600)",
+      "linear-gradient(90deg, #00ffff, #00ff99, #ffff00)"
+    ];
+    let colorIndex = 0;
+    setInterval(() => {
+      titleEl.style.background = colors[colorIndex];
+      titleEl.style.webkitBackgroundClip = "text";
+      titleEl.style.webkitTextFillColor = "transparent";
+      colorIndex = (colorIndex + 1) % colors.length;
+    }, 3000);
+  </script>
+</body>
+</html>

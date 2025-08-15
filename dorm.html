@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🔥 โปรแกรมฝึกซ้อม / สินค้าแนะนำ 🔥</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #2a0000, #400000);
+      background-size: 400% 400%;
+      animation: bgMove 10s ease infinite;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .header h1 {
+      font-size: 2.5em;
+      background: linear-gradient(90deg, #ff0000, #ff6600, #ffff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 20px rgba(255,0,0,0.6);
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .header h1:hover {
+      transform: translateY(-5px);
+      text-shadow: 0 0 30px rgba(255,100,0,0.8);
+    }
+
+    .header p {
+      color: #ddd;
+      font-size: 1.2em;
+    }
+
+    .cards-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, rgba(255, 0, 0, 0.15), rgba(255, 100, 100, 0.05));
+      border: 2px solid #ff4d4d;
+      border-radius: 15px;
+      padding: 20px;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.3);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 0px 25px rgba(255, 0, 0, 0.7);
+    }
+
+    .card h2 {
+      background: linear-gradient(90deg, #ff4d4d, #ff9900);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.5em;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover h2 {
+      transform: scale(1.1);
+    }
+
+    .card p {
+      color: #ccc;
+      font-size: 1em;
+      min-height: 50px;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 15px;
+      font-size: 1em;
+      background: linear-gradient(90deg, #ff0000, #ff6600);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0px 0px 15px #ff0000;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .card a:hover {
+      background: linear-gradient(90deg, #cc0000, #ff3300);
+      transform: translateY(-3px);
+      box-shadow: 0px 0px 25px #ff3300;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🔥 โปรแกรมฝึกซ้อม / สินค้าแนะนำ 🔥</h1>
+    <p>เลือกสิ่งที่ใช่สำหรับคุณ แล้วลุย!</p>
+  </div>
+
+  <div class="cards-container">
+    <div class="card">
+      <h2>💪 คอร์สกล้ามแน่น 30 วัน</h2>
+      <p>ฝึกหนักทุกวัน! ฟรีคู่มือ & ตารางฝึก</p>
+      <a href="do.html">ดูรายละเอียด</a>
+    </div>
+
+    <div class="card">
+      <h2>🔥 เวย์โปรตีนไฟลุก</h2>
+      <p>โปรตีนคุณภาพสูงสำหรับนักกล้าม</p>
+      <a href="pom.html">สั่งซื้อทันที</a>
+    </div>
+
+    <div class="card">
+      <h2>🏋️‍♂️ ดัมเบลเหล็กแท้</h2>
+      <p>ของมันต้องมี ถ้าอยากใหญ่!</p>
+      <a href="dumbbell.html">ดูสินค้า</a>
+    </div>
+  </div>
+</body>
+</html>
